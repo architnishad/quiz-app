@@ -1,5 +1,5 @@
 # QuizApp
-Java Quiz Application 🎯
+Java Quiz Application 
 
 A desktop-based Quiz Application developed using Java Swing. The application provides an interactive quiz experience with a login screen, rules section, multiple-choice questions, timer, and final score display.
 
