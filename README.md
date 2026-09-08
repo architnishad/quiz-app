@@ -22,25 +22,7 @@ A desktop-based Quiz Application developed using Java Swing. The application pro
 - AWT
 - OOP Concepts
 - Event Handling
-- IntelliJ IDEA
-
-📂 Project Structure
-
-QuizApp/
-├── src/
-│   ├── quiz/
-│   │   └── app/
-│   │       ├── Login.java
-│   │       ├── Rules.java
-│   │       ├── Quiz.java
-│   │       └── Score.java
-│   │
-│   └── icons/
-│       ├── login.png
-│       ├── quiz.png
-│       └── score.png
-│
-└── README.md
+- IntelliJ IDE
 
 ▶️ How to Run
 
