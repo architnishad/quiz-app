@@ -6,18 +6,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Rules extends JFrame implements ActionListener {
+public class rules extends JFrame implements ActionListener
+{
 
     JButton start;
     String name;
 
-    Rules(String name) {
+    rules(String name)
+    {
         this.name = name;
 
         int frameWidth = 900;
         int frameHeight = 650;
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/back.png"));
+        ImageIcon i1 = new ImageIcon(getClass().getResource("back.png"));
         Image i = i1.getImage().getScaledInstance(frameWidth, frameHeight, Image.SCALE_SMOOTH);
         ImageIcon i2 = new ImageIcon(i);
         JLabel image = new JLabel(i2);
@@ -76,10 +78,11 @@ public class Rules extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         setVisible(false);
-        new Quiz(name);
+        new quiz(name);
     }
 
-    public static void main(String[] args) {
-        new Rules("User");
+    public static void main(String[] args)
+    {
+        new rules("User");
     }
 }
