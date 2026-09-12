@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Score extends JFrame {
+public class score extends JFrame {
 
-    public Score(String name, int score) {
+    public score(String name, int score) {
 
         // Frame setup
         setLayout(null);
@@ -42,12 +42,12 @@ public class Score extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new Login();
+                new login();
             }
         });
 
         // 4. Background Image
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/score.png"));
+        ImageIcon i1 = new ImageIcon(getClass().getResource("score.png"));
         Image i2 = i1.getImage().getScaledInstance(1000, 750, Image.SCALE_SMOOTH);
         ImageIcon i3 = new ImageIcon(i2);
 
@@ -62,7 +62,8 @@ public class Score extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new Score("User", 0);
+    public static void main(String[] args)
+    {
+        new score("User", 0);
     }
 }
