@@ -5,12 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-public class Login extends JFrame implements ActionListener {
+public class login extends JFrame implements ActionListener
+{
 
     JTextField text;
     JButton next, exit;
 
-    public Login() {
+    public login() {
 
         int frameWidth = 900;
         int frameHeight = 650;
@@ -82,7 +83,7 @@ public class Login extends JFrame implements ActionListener {
 
         // ================= BACKGROUND IMAGE =================
 
-        URL imgUrl = ClassLoader.getSystemResource("icons/login.png");
+        URL imgUrl = getClass().getResource("login.png");
 
         if (imgUrl != null) {
 
@@ -134,7 +135,7 @@ public class Login extends JFrame implements ActionListener {
 
             // Proceed to Rules screen
             dispose();
-            new Rules(userName);
+            new rules(userName);
         }
 
         // EXIT
@@ -145,8 +146,9 @@ public class Login extends JFrame implements ActionListener {
 
     // ================= MAIN =================
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
-        new Login();
+        new login();
     }
 }
