@@ -3,14 +3,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Quiz extends JFrame implements ActionListener {
-
-    String questions[][] = new String[10][5];
-    String answers[][] = new String[10][2];
-    String useranswers[][] = new String[10][1];
+public class quiz extends JFrame implements ActionListener
+{
+    String[][] questions= new String[10][5];
+    String[][] answers = new String[10][2];
+    String[][] useranswers = new String[10][1];
     JLabel qno, question, timeLabel;
     JRadioButton opt1, opt2, opt3, opt4;
     ButtonGroup groupoptions;
+
     JButton next, submit, lifeline;
 
     int timer = 15;
@@ -21,14 +22,14 @@ public class Quiz extends JFrame implements ActionListener {
 
     String name;
 
-    Quiz(String name) {
+    quiz(String name) {
         this.name = name;
         setBounds(50, 0, 1440, 850);
         getContentPane().setBackground(Color.WHITE);
         setUndecorated(true);
         setLayout(null);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/quiz.png"));
+        ImageIcon i1 = new ImageIcon(getClass().getResource("quiz.png"));
         JLabel image = new JLabel(i1);
         image.setBounds(0, 0, 1440, 392);
         add(image);
@@ -180,9 +181,12 @@ public class Quiz extends JFrame implements ActionListener {
         // Countdown handled by a Swing Timer instead of blocking paint()/EDT
         countdownTimer = new javax.swing.Timer(1000, e -> {
             timer--;
-            if (timer >= 0) {
+            if (timer >= 0)
+            {
                 timeLabel.setText("Time left - " + timer + " seconds");
-            } else {
+            }
+            else
+            {
                 timeLabel.setText("Time's up!!");
                 countdownTimer.stop();
                 advance(true); // timed out, auto-advance
@@ -206,7 +210,8 @@ public class Quiz extends JFrame implements ActionListener {
                 opt4.setEnabled(false);
             }
             lifeline.setEnabled(false);
-        } else if (ae.getSource() == submit) {
+        }
+        else if (ae.getSource() == submit) {
             recordAnswer();
             finishQuiz();
         }
@@ -252,7 +257,7 @@ public class Quiz extends JFrame implements ActionListener {
             }
         }
         setVisible(false);
-        new Score(name, score);
+        new score(name, score);
     }
 
     public void start(int count) {
@@ -278,6 +283,6 @@ public class Quiz extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Quiz("User");
+        new quiz("User");
     }
 }
